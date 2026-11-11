@@ -48,7 +48,7 @@ export function Hero() {
         <p className="inline-block -rotate-2 rounded-md border-2 border-ink bg-mint px-3 py-0.5 font-heading text-sm font-black">{t(clinic.name)}</p>
         <h1 key={lang} className="mt-4 text-4xl font-black leading-tight text-foreground sm:text-5xl">
           {words.map((w, i) => (
-            <span key={i} className="relative inline-block">
+            <span key={i} className={`relative inline-block ${i < words.length - 1 ? "me-[0.3em]" : ""}`}>
               <motion.span className="inline-block" initial={reduce ? false : { scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }}
                 transition={{ type: "spring", stiffness: 500, damping: 14, delay: 0.1 + i * 0.12 }}>{w}</motion.span>
               {i === words.length - 1 && (
@@ -57,7 +57,6 @@ export function Hero() {
                     initial={{ pathLength: reduce ? 1 : 0 }} animate={{ pathLength: 1 }} transition={{ delay: 0.2 + words.length * 0.12, duration: 0.6 }} />
                 </svg>
               )}
-              {i < words.length - 1 && " "}
             </span>
           ))}
         </h1>
