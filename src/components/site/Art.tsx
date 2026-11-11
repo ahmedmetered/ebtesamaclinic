@@ -10,7 +10,7 @@ export function WinkingTooth({ className }: { className?: string }) {
       <path d="M30 34c3-6 9-8 14-6" fill="none" {...ink} strokeWidth={2.5} />
       <ellipse cx="44" cy="58" rx="4.5" ry="5.5" fill="var(--ink)" />
       <motion.path d="M70 58 q6 -6 12 0" fill="none" {...ink}
-        animate={reduce ? undefined : { d: ["M70 58 q6 -6 12 0", "M70 58 q6 -6 12 0", "M70 58 q6 0 12 0", "M70 58 q6 -6 12 0"] }}
+        animate={reduce ? {} : { d: ["M70 58 q6 -6 12 0", "M70 58 q6 -6 12 0", "M70 58 q6 0 12 0", "M70 58 q6 -6 12 0"] }}
         transition={{ duration: 3, times: [0, 0.8, 0.88, 1], repeat: Infinity }} />
       <path d="M48 76q12 12 26 0" fill="var(--yellow)" {...ink} />
       <circle cx="36" cy="70" r="5" fill="var(--mint)" />

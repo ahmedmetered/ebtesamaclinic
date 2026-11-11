@@ -136,7 +136,7 @@ export function Booking() {
                             const showMonth = d.getDate() === 1 || d === days[0];
                             return (
                               <motion.button key={dayKey(d)} disabled={closed} onClick={() => { setDate(d); setSlot(undefined); }}
-                                whileTap={closed ? undefined : { x: 2, y: 2 }}
+                                whileTap={closed ? {} : { x: 2, y: 2 }}
                                 title={closed ? t(ui.closedFriday) : fmtDate(d)} aria-pressed={!!sel}
                                 className={`relative aspect-square overflow-hidden rounded-lg border-2 border-ink text-sm font-bold ${sel ? "bg-yellow text-ink" : closed ? "hatch text-ink/50 line-through decoration-coral decoration-2" : "bg-card text-ink"}`}>
                                 {d.toLocaleDateString(loc, { day: "numeric" })}
@@ -154,7 +154,7 @@ export function Booking() {
                                 const off = slotUnavailable(date, s, doctorId ?? "");
                                 const sel = slot === s;
                                 return (
-                                  <motion.button key={s} disabled={off} onClick={() => setSlot(s)} whileTap={off ? undefined : { x: 4, y: 4, boxShadow: "0 0 0 0 var(--ink)" }} aria-pressed={sel}
+                                  <motion.button key={s} disabled={off} onClick={() => setSlot(s)} whileTap={off ? {} : { x: 4, y: 4, boxShadow: "0 0 0 0 var(--ink)" }} aria-pressed={sel}
                                     className={`ticket press px-5 py-1.5 text-sm font-bold ${sel ? "bg-yellow text-ink" : off ? "hatch text-ink/50 line-through decoration-coral decoration-2" : "bg-card text-ink"}`}>
                                     <span dir="ltr">{digits(s, lang)}</span>
                                   </motion.button>
