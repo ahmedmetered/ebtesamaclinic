@@ -73,7 +73,7 @@ export function Booking() {
           {done ? (
             <div className="py-8 text-center">
               <svg viewBox="0 0 80 80" className="mx-auto h-24 w-24" aria-hidden>
-                <motion.circle cx="40" cy="40" r="34" fill="none" fill="var(--mint)" stroke="var(--ink)" strokeWidth="3" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6 }} />
+                <motion.circle cx="40" cy="40" r="34" fill="var(--mint)" stroke="var(--ink)" strokeWidth="3" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6 }} />
                 <motion.path d="M25 41 L36 52 L56 30" fill="none" stroke="var(--ink)" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ delay: 0.5, duration: 0.5 }} />
               </svg>
               <h3 className="mt-4 text-2xl font-bold">{t(ui.successTitle)}</h3>
