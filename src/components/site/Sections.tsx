@@ -169,7 +169,7 @@ export function Visit() {
           <div className="p-6">
             <h3 className="text-xl font-bold">{t(ui.locationTitle)}</h3>
             <p className="mt-2 text-muted-foreground">{t(clinic.address)}</p>
-            <p className="mt-2 flex items-center gap-2 text-sm" dir="ltr"><Phone className="h-4 w-4 text-primary" aria-hidden />{lang === "ar" ? clinic.phone.replace(/\d/g, (d) => "٠١٢٣٤٥٦٧٨٩"[+d]) : clinic.phone}</p>
+            <p className="mt-2 flex items-center gap-2 text-sm" dir="ltr"><Phone className="h-4 w-4 text-primary" aria-hidden />{lang === "ar" ? clinic.phone.replace(/\d/g, (d) => "٠١٢٣٤٥٦٧٨٩"[+d] ?? d) : clinic.phone}</p>
           </div>
         </div>
       </div>

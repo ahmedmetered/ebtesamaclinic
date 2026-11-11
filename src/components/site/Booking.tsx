@@ -61,7 +61,7 @@ export function Booking() {
   const Next = dir === "rtl" ? ChevronLeft : ChevronRight;
 
   // calendar grid: pad to week start (Saturday) — Egyptian week
-  const lead = days.length ? (days[0].getDay() + 1) % 7 : 0;
+  const lead = days.length ? (days[0]!.getDay() + 1) % 7 : 0;
   const weekdays = Array.from({ length: 7 }, (_, i) => new Date(2024, 0, 6 + i).toLocaleDateString(loc, { weekday: "short" }));
 
   return (
@@ -196,9 +196,9 @@ export function Booking() {
                         <div className="rounded-2xl bg-secondary p-4 text-sm">
                           <h4 className="mb-2 font-bold">{t(ui.summary)}</h4>
                           <dl className="space-y-1">
-                            <div className="flex justify-between gap-2"><dt className="text-muted-foreground">{t(ui.steps[0])}</dt><dd className="font-medium">{service && `${t(service.name)} · ${price(service.price)}`}</dd></div>
-                            <div className="flex justify-between gap-2"><dt className="text-muted-foreground">{t(ui.steps[1])}</dt><dd className="font-medium">{doctor && t(doctor.name)}</dd></div>
-                            <div className="flex justify-between gap-2"><dt className="text-muted-foreground">{t(ui.steps[2])}</dt><dd className="font-medium">{date && fmtDate(date)} · <span dir="ltr">{slot && digits(slot, lang)}</span></dd></div>
+                            <div className="flex justify-between gap-2"><dt className="text-muted-foreground">{t(ui.steps[0]!)}</dt><dd className="font-medium">{service && `${t(service.name)} · ${price(service.price)}`}</dd></div>
+                            <div className="flex justify-between gap-2"><dt className="text-muted-foreground">{t(ui.steps[1]!)}</dt><dd className="font-medium">{doctor && t(doctor.name)}</dd></div>
+                            <div className="flex justify-between gap-2"><dt className="text-muted-foreground">{t(ui.steps[2]!)}</dt><dd className="font-medium">{date && fmtDate(date)} · <span dir="ltr">{slot && digits(slot, lang)}</span></dd></div>
                           </dl>
                         </div>
                       </div>

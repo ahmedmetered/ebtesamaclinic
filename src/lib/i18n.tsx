@@ -33,5 +33,5 @@ export function useI18n() {
 
 /** Convert Western digits in a string to Eastern Arabic when in Arabic. */
 export function digits(s: string, lang: Lang) {
-  return lang === "ar" ? s.replace(/\d/g, (d) => "٠١٢٣٤٥٦٧٨٩"[+d]) : s;
+  return lang === "ar" ? s.replace(/\d/g, (d) => "٠١٢٣٤٥٦٧٨٩"[+d] ?? d) : s;
 }
